@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 class Everapp extends Component {
 	constructor(props){
     	super(props);
+    	// state is either true or false
     	this.state={
 	    	modalAppear: false
 		}
@@ -15,9 +16,12 @@ class Everapp extends Component {
 		this.modalClose = this.modalClose.bind(this);
 	}
 
+	// to open set state to true
 	modalOpen(){
 		this.setState({modalAppear: true})
 	}
+
+	// to open set state to close
 	modalClose(){
 		this.setState({modalAppear: false})
 	}
@@ -35,16 +39,24 @@ class Everapp extends Component {
 	}
 }
 
+// modal component
 class EverModal extends Component {
 	render(){
+		// if state is false, dont render modal
 		if(this.props.modalAppear == false){
 			return null
 		}
+
+		// if state if true, render modal
 		else{
 			return(
 				<div className="ever-modal-wrapper">
 					<div className="ever-modal">
+
+						{/* this props children so various content can be added to modal */}
 						{this.props.children}
+
+						{/* if this button is pressed, invokde close function which will set state to false */}
 						<button className="btn hero-button" onClick={this.props.close}>Close</button>
 					</div>
 				</div>
