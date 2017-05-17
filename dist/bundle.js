@@ -20236,6 +20236,7 @@ __webpack_require__(86);
 class Everapp extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 	constructor(props) {
 		super(props);
+		// state is either true or false
 		this.state = {
 			modalAppear: false
 		};
@@ -20243,9 +20244,12 @@ class Everapp extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 		this.modalClose = this.modalClose.bind(this);
 	}
 
+	// to open set state to true
 	modalOpen() {
 		this.setState({ modalAppear: true });
 	}
+
+	// to open set state to close
 	modalClose() {
 		this.setState({ modalAppear: false });
 	}
@@ -20277,26 +20281,31 @@ class Everapp extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 	}
 }
 
+// modal component
 class EverModal extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 	render() {
+		// if state is false, dont render modal
 		if (this.props.modalAppear == false) {
 			return null;
-		} else {
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				'div',
-				{ className: 'ever-modal-wrapper' },
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					'div',
-					{ className: 'ever-modal' },
-					this.props.children,
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						'button',
-						{ className: 'btn hero-button', onClick: this.props.close },
-						'Close'
-					)
-				)
-			);
 		}
+
+		// if state if true, render modal
+		else {
+				return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'ever-modal-wrapper' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'ever-modal' },
+						this.props.children,
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'button',
+							{ className: 'btn hero-button', onClick: this.props.close },
+							'Close'
+						)
+					)
+				);
+			}
 	}
 }
 
@@ -22783,7 +22792,7 @@ exports = module.exports = __webpack_require__(51)(undefined);
 
 
 // module
-exports.push([module.i, "html, body {\n  font-family: sans-serif,\"Helvetica Neue\", Helvetica, Arial;\n  font-size: 16px; }\n\n/*top*/\n.ever-nav {\n  background: #111; }\n\n.ever-logo {\n  background: #444;\n  color: #f1f1f1;\n  font-size: 1em;\n  margin: 10px auto;\n  padding: 10px 0;\n  text-align: center;\n  width: 150px; }\n\n/*hero*/\n.ever-hero-wrapper {\n  background: #ddd; }\n\n.ever-hero {\n  align-items: center;\n  display: flex;\n  height: 300px;\n  justify-content: center; }\n\n/*hero button*/\n.hero-button-wrapper {\n  text-align: center; }\n\n.hero-button {\n  background: #555;\n  color: #f1f1f1;\n  padding: 10px 35px;\n  text-align: center; }\n\n/*headings*/\n.ever-heading {\n  text-align: center; }\n\n.ever-heading--main {\n  font-size: 1.7em;\n  padding: 0 0 50px 0; }\n\n.ever-heading--sub {\n  font-size: 1.4em; }\n\n.ever-heading--content {\n  padding: 20px 0;\n  font-size: 1.4em; }\n\n/*content*/\n.ever-info {\n  padding: 10px 0; }\n\n/*modal*/\n.ever-modal {\n  background: #f1f1f1;\n  height: 400px;\n  left: 50%;\n  position: fixed;\n  top: 50%;\n  max-height: 100%;\n  max-width: 100%;\n  padding: 20px;\n  text-align: left;\n  transform: translate(-50%, -50%);\n  width: 90%;\n  z-index: 9999; }\n\n.ever-modal-wrapper {\n  background: rgba(0, 0, 0, 0.8);\n  height: 100%;\n  left: 0px;\n  position: fixed;\n  top: 0px;\n  width: 100%;\n  z-index: 9998; }\n\n/* Custom, iPhone Retina */\n/* Extra Small Devices, Phones */\n/* Small Devices, Tablets */\n@media only screen and (min-width: 768px) {\n  .ever-heading--content {\n    font-size: 1.8em; }\n  .ever-heading--sub {\n    font-size: 2em; }\n  .ever-hero {\n    height: 430px; }\n  .ever-modal {\n    width: 600px; }\n  .ever-heading--main {\n    font-size: 3em; } }\n\n/* Medium Devices, Desktops */\n/* Large Devices, Wide Screens */\n", ""]);
+exports.push([module.i, "html, body {\n  font-family: sans-serif,\"Helvetica Neue\", Helvetica, Arial;\n  font-size: 16px; }\n\n/*top*/\n.ever-nav {\n  background: #111; }\n\n.ever-logo {\n  background: #444;\n  color: #f1f1f1;\n  font-size: 1em;\n  margin: 10px auto;\n  padding: 10px 0;\n  text-align: center;\n  width: 150px; }\n\n/*hero*/\n.ever-hero-wrapper {\n  background: #ddd; }\n\n.ever-hero {\n  align-items: center;\n  display: flex;\n  height: 300px;\n  justify-content: center; }\n\n/*hero button*/\n.hero-button-wrapper {\n  text-align: center; }\n\n.hero-button {\n  background: #555;\n  color: #f1f1f1;\n  padding: 10px 35px;\n  text-align: center; }\n\n/*headings*/\n.ever-heading {\n  text-align: center; }\n\n.ever-heading--main {\n  font-size: 1.7em;\n  padding: 0 0 50px 0; }\n\n.ever-heading--sub {\n  font-size: 1.4em; }\n\n.ever-heading--content {\n  padding: 20px 0;\n  font-size: 1.4em; }\n\n/*content*/\n.ever-info {\n  padding: 10px 0; }\n\n/*modal*/\n.ever-modal {\n  background: #f1f1f1;\n  height: 500px;\n  left: 50%;\n  position: fixed;\n  top: 50%;\n  max-height: 100%;\n  max-width: 100%;\n  padding: 20px;\n  text-align: left;\n  transform: translate(-50%, -50%);\n  width: 90%;\n  z-index: 9999; }\n\n.ever-modal-wrapper {\n  background: rgba(0, 0, 0, 0.8);\n  height: 100%;\n  left: 0px;\n  position: fixed;\n  top: 0px;\n  width: 100%;\n  z-index: 9998; }\n\n/* Custom, iPhone Retina */\n/* Extra Small Devices, Phones */\n@media only screen and (min-width: 480px) {\n  .ever-modal {\n    height: 400px; } }\n\n/* Small Devices, Tablets */\n@media only screen and (min-width: 768px) {\n  .ever-heading--content {\n    font-size: 1.8em; }\n  .ever-heading--sub {\n    font-size: 2em; }\n  .ever-hero {\n    height: 430px; }\n  .ever-modal {\n    width: 600px; }\n  .ever-heading--main {\n    font-size: 3em; } }\n\n/* Medium Devices, Desktops */\n/* Large Devices, Wide Screens */\n", ""]);
 
 // exports
 
