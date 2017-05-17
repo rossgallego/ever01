@@ -64,7 +64,7 @@ html,body{
 /*modal*/
 .ever-modal{
 	background: #f1f1f1;    
-	height: 400px;
+	height: 500px;
 	left: 50%;
 	position: fixed;
 	top: 50%;
@@ -89,11 +89,12 @@ html,body{
     /* Custom, iPhone Retina */ 
     @media only screen and (min-width : 320px) {
     }
-
     /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 480px) {
+    	.ever-modal{
+    		height: 400px;
+    	}	
     }
-
     /* Small Devices, Tablets */
     @media only screen and (min-width : 768px) {
 		.ever-heading--content{
